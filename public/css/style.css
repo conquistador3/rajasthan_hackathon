@@ -1,0 +1,1175 @@
+
+body {
+	top: 0;
+	left: 0;
+	margin: 0;
+	background: #333D47;
+	text-align: center;
+}
+
+.result {
+	font-family: Gotham, Helvetica, sans-serif;
+	font-size: 2.5rem;
+	font-weight: 500;
+	color: #fff;
+	margin-top: 50px;
+}
+
+.title {
+	font-family: Gotham, Helvetica, sans-serif;
+	font-size: 2.75rem;
+	font-weight: 500;
+	text-transform: uppercase;
+}
+
+input,
+button {
+	font-family: Gotham, Helvetica, sans-serif;
+	font-size: 1.2rem;
+}
+
+.helper {
+	font-family: Gotham, Helvetica, sans-serif;
+	font-size: 0.8rem;
+}
+
+.container {
+	position: relative;
+	width: 742px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.header {
+	margin: 25px auto 10px;
+}
+
+.line-shape {
+	position: relative;
+	background: #EA0B8C;
+	height: 2px;
+	width: 80px;
+	margin: 70px auto 0;
+}
+
+.title {
+	color: #fff;
+}
+
+.form-elements {
+	margin: 0 0 0px;
+}
+
+select{
+	background: rgba(0,0,0,0.4);
+	border: 2px solid #fff;
+	color: #fff;
+	height: 50px;
+	width: 335px;
+	text-align: center;
+}
+select,
+button {
+	position: relative;
+	border-radius: 4px;
+	text-align: center;
+	margin-bottom: 24px;
+	padding-left: 20px;
+	text-transform: uppercase;
+}
+
+select:focus {
+	background: #000;
+	border: 2px solid #EA0B8C;
+	outline-color: #EA0B8C;
+}
+
+input,
+button {
+	position: relative;
+	border-radius: 4px;
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+input {
+	background: none;
+	border: 2px solid #fff;
+	color: #fff;
+	height: 50px;
+	width: 335px;
+}
+
+input:focus {
+	border: 2px solid #EA0B8C;
+	outline-color: #EA0B8C;
+}
+
+input::-webkit-input-placeholder {
+   color: #fff;
+}
+
+input:-moz-placeholder { /* Firefox 18- */
+   color: #fff;  
+}
+
+input::-moz-placeholder {  /* Firefox 19+ */
+   color: #fff;  
+}
+
+input:-ms-input-placeholder {  
+   color: #fff;  
+}
+
+button {
+	background: #EA0B8C;
+	border: 2px solid #EA0B8C;
+	color: #fff;
+	height: 54px;
+	width: 342px;
+}
+
+button:focus {
+	outline: 0;
+}
+
+.hide {
+	-webkit-animation: hide 0.8s ease forwards;
+	-moz-animation: hide 0.8s ease forwards;
+	animation: hide 0.8s ease forwards;	
+}
+
+#submitForm {
+	cursor: pointer;
+	-webkit-transition: all 0.3s ease;
+	-moz-transition: all 0.3s ease;
+	transition: all 0.3s ease;
+}
+
+#submitForm:hover {
+	background: #BE0972;
+	border: 2px solid #BE0972;
+}
+
+/*=====================
+---- SVG ANIMATION ----
+=====================*/
+
+.svg-check {
+	display: none;
+	position: absolute;
+	margin-left: 180px;
+	margin-top: 20px;
+}
+
+.circle {
+	display: none;
+	stroke-dasharray: 434;
+	stroke-dashoffset: 434;
+	-webkit-animation: fill 0.6s linear forwards;
+	-moz-animation: fill 0.6s linear forwards;
+	animation: fill 0.6s linear forwards;
+}
+
+.check {
+	display: none;
+	stroke-dasharray: 95;
+	stroke-dashoffset: 95;
+	-webkit-animation: fill 0.6s linear forwards;
+	-moz-animation: fill 0.6s linear forwards;
+	animation: fill 0.6s linear forwards;
+}
+
+/*==============================
+---- VALID + INVALID STYLES ----
+==============================*/
+
+.valid {
+	display: none;
+	position: absolute;
+	background: #03A9F4;
+	height: 26px;
+	width: 26px;
+	border-radius: 50%;
+	margin: -66px 0 0 300px;
+	-webkit-animation: pop 0.5s ease;
+	-moz-animation: pop 0.5s ease;
+	animation: pop 0.5s ease;
+}
+
+.valid::before {
+	content: "";
+	display: block;
+	position: relative;
+	background: #fff;
+	height: 13px;
+	width: 2px;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	transform: rotate(45deg);
+	margin: 7px 0 0 14px;
+}
+
+.valid::after {
+	content: "";
+	display: block;
+	position: relative;
+	background: #fff;
+	height: 6px;
+	width: 2px;
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+	margin: -7px 0 0 8px;
+}
+
+.invalid {
+	display: none;
+	position: absolute;
+	background: #EA0B8C;
+	height: 26px;
+	width: 26px;
+	border-radius: 50%;
+	margin: -66px 0 0 300px;
+	-webkit-animation: pop 0.5s ease;
+	-moz-animation: pop 0.5s ease;
+	animation: pop 0.5s ease;
+}
+
+.invalid::before {
+	content: "";
+	display: block;
+	position: relative;
+	background: #fff;
+	height: 11px;
+	width: 2px;
+	margin: 5px 0 0 12px;
+}
+
+.invalid::after {
+	content: "";
+	display: block;
+	position: relative;
+	background: #fff;
+	height: 2px;
+	width: 2px;
+	margin: 3px 0 0 12px;
+}
+
+.findInvalid {
+	display: block;
+}
+
+.helper {
+	display: none;
+	position: absolute;
+	background: #EA0B8C;
+	height: 30px;
+	width: 270px;
+	color: #fff;
+	padding: 15px 0 0 0;
+	border-radius: 5px;
+	margin: -75px 0 0 370px;
+	-webkit-animation: appear 1s ease;
+	-moz-animation: appear 1s ease;
+	animation: appear 1s ease;
+}
+
+.helper::before {
+	content: "";
+	display: block;
+	position: absolute;
+	height: 0;
+	width: 0;
+	border-right: 10px solid #EA0B8C;
+	border-top: 10px solid transparent;
+	border-bottom: 10px solid transparent;
+	margin: -2px 0 0 -10px;
+}
+
+/*==============================
+---- KEYFRAME ANIMATIONS ----
+==============================*/
+
+@-webkit-keyframes fill {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@-moz-keyframes fill {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes fill {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@-webkit-keyframes pop {
+	0% {
+		-webkit-transform: scale(1);
+	}
+	60% {
+		-webkit-transform: scale(1.3);
+	}
+	100% {
+		-webkit-transform: scale(1);
+	}
+}
+
+@-moz-keyframes pop {
+	0% {
+		-moz-transform: scale(1);
+	}
+	60% {
+		-moz-transform: scale(1.3);
+	}
+	100% {
+		-moz-transform: scale(1);
+	}
+}
+
+@keyframes pop {
+	0% {
+		transform: scale(1);
+	}
+	60% {
+		transform: scale(1.3);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+@-webkit-keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes hide {
+	0% {
+		margin-top: 0;
+		opacity: 1;
+	}
+	10% {
+		margin-top: -10px;
+		opacity: 1;
+	}
+	100% {
+		margin-top: 400px;
+		opacity: 0;
+	}
+}
+
+@-moz-keyframes hide {
+	0% {
+		margin-top: 0;
+		opacity: 1;
+	}
+	10% {
+		margin-top: -10px;
+		opacity: 1;
+	}
+	100% {
+		margin-top: 400px;
+		opacity: 0;
+	}
+}
+
+@keyframes hide {
+	0% {
+		margin-top: 0;
+		opacity: 1;
+	}
+	20% {
+		margin-top: -30px;
+		opacity: 1;
+	}
+	100% {
+		margin-top: 400px;
+		opacity: 0;
+	}
+}
+
+/*=====================
+---- MEDIA QUERIES ----
+=======================*/
+
+@media screen and (max-width: 960px) {
+	.container {
+		width: 342px;
+	}
+	
+	.helper {
+		position: relative;
+		margin: 0 auto 20px auto;
+	}
+	
+	.helper::before {
+		content: "";
+		display: block;
+		position: absolute;
+		height: 0;
+		width: 0;
+		border-bottom: 10px solid #EA0B8C;
+		border-left: 10px solid transparent;
+		border-right: 10px solid transparent;
+		margin: -34px 0 0 125px;
+	}
+}
+
+/*Animated Weather */
+
+.row{
+  margin: 20px auto;
+}
+
+.box {
+  position: relative;
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin-left: 180px;
+}
+
+.circle-box {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 30px lightblue;
+}
+
+.littlCloud{
+  animation-name: cloudtransform;
+  animation-duration: 4s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+.littlcloud1 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #999999;
+  top: 40px;
+  left: 71px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  box-shadow: inset 0 -6px 8px -6px rgba(0, 0, 0, .2);
+  z-index: 2;
+}
+.littlcloud2 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #999999;
+  top: 30px;
+  left: 80px;
+  width: 40px;
+  height: 35px;
+  border-radius: 50%;
+  box-shadow: inset 0 -6px 8px -8px rgba(0, 0, 0, .2);
+  z-index: 3;
+}
+.littlcloud3 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #999999;
+  top: 35px;
+  left: 100px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  box-shadow: inset 0 -6px 8px -6px rgba(0, 0, 0, .2);
+  z-index:2;
+}
+
+.cloud1 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #d9d9d9;
+  top: 70px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: inset 0 -6px 8px -6px #b3b3b3;
+  z-index: 3;
+}
+.cloud2 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #d9d9d9;
+  top: 50px;
+  left: 35px;
+  width: 80px;
+  height: 75px;
+  border-radius: 50%;
+  box-shadow: inset 0 -6px 8px -7px #b3b3b3;
+  z-index: 4;
+}
+.cloud3 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #d9d9d9;
+  top: 70px;
+  left: 85px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: inset 0 -6px 8px -6px #b3b3b3;
+  z-index: 3;
+}
+
+.sunshine1 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #ffff66;
+  width: 110px;
+  height: 110px;
+  top: 20px;
+  left: 20px;
+  animation-name: rotation1;
+  animation-timing-function: linear;
+  animation-duration: 10s; 
+  animation-direction: alternate;
+  animation-iteration-count: infinite;  
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.sunshine2 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #ffff66;
+  width: 110px;
+  height: 110px;
+  top: 20px;
+  left: 20px;
+  animation-name: rotation2;
+  animation-direction: alternate;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform: rotate(35deg);
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+.suncircle {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #ffff66;
+  width: 70px;
+  height: 70px;
+  top: 40px;
+  left: 40px;
+  border: 5px solid white;
+  border-radius: 50%;
+  z-index: 2;
+  box-shadow: inset -6px -6px 8px -7px #ffd480;
+}
+
+.cloudthird {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: 5px;
+  left: 0px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.sun-second {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #ffff66;
+  top: -5px;
+  left: 15px;
+  z-index: 1;
+}
+
+.cloud-rain {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: -30px;
+}
+
+.maindrop {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: lightblue;
+  width: 9px;
+  height: 9px;
+  top: 105px;
+  left: 35px;
+  border-radius: 50%;
+  border: 1px solid lightblue;
+  box-shadow: inset 0 -6px 8px -7px #4d88ff;
+}
+.droptail {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: lightblue;
+  width: 16px;
+  height: 10px;
+  top: 99px;
+  left: 31px;
+  -webkit-clip-path: polygon(90% 0, 25% 86%, 83% 100%);
+  clip-path: polygon(90% 0, 25% 86%, 83% 100%);
+}
+
+.drop1 {
+  animation-name: snow-drops;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.drop2 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: 15px;
+  left: 13px;
+  animation-name: snow-drops;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.drop3 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: 0px;
+  left: 30px;
+  animation-name: snow-drops;
+  animation-duration: 2s;
+  animation-delay: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.drop4 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: 15px;
+  left: 43px;
+  animation-name: snow-drops;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.drop5 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: 0px;
+  left: 60px;
+  animation-name: snow-drops;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.clouddark1 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #b3b3b3;
+  top: 70px;
+  left: 15px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: inset 0 -6px 8px -6px #999999;
+  z-index: 2;
+  animation-name: darker;
+  animation-timing-function: linear;
+  animation-duration: 4s; 
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+.clouddark2 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #b3b3b3;
+  top: 50px;
+  left: 35px;
+  width: 80px;
+  height: 75px;
+  border-radius: 50%;
+  box-shadow: inset 0 -6px 8px -7px #999999;
+  z-index: 3;
+  animation-name: darker;
+  animation-timing-function: linear;
+  animation-duration: 4s; 
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+.clouddark3 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #b3b3b3;
+  top: 70px;
+  left: 85px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  box-shadow: inset 0 -6px 8px -6px #999999;
+  z-index: 2;
+  animation-name: darker;
+  animation-timing-function: linear;
+  animation-duration: 4s; 
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+}
+
+.snowycloud {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: -30px;
+}
+
+.snowflake-part1 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: lightblue;
+  width: 12px;
+  height: 12px;
+  top: 99px;
+  left: 35px;
+  box-shadow: inset 0 -6px 8px -6px #4d88ff;
+  -webkit-clip-path: polygon(4% 0, 0 5%, 45% 51%, 0 94%, 5% 100%, 50% 56%, 95% 100%, 100% 94%, 56% 51%, 100% 5%, 95% 0, 51% 46%);
+  clip-path: polygon(4% 0, 0 5%, 45% 51%, 0 94%, 5% 100%, 50% 56%, 95% 100%, 100% 94%, 56% 51%, 100% 5%, 95% 0, 51% 46%);
+}
+.snowflake-part2 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: lightblue;
+  width: 12px;
+  height: 12px;
+  top: 99px;
+  left: 35px;
+  box-shadow: inset 0 -6px 8px -7px #4d88ff;
+  transform: rotate(45deg);
+  -webkit-clip-path: polygon(4% 0, 0 5%, 45% 51%, 0 94%, 5% 100%, 50% 56%, 95% 100%, 100% 94%, 56% 51%, 100% 5%, 95% 0, 51% 46%);
+  clip-path: polygon(4% 0, 0 5%, 45% 51%, 0 94%, 5% 100%, 50% 56%, 95% 100%, 100% 94%, 56% 51%, 100% 5%, 95% 0, 51% 46%);
+}
+
+.snowflake1{
+  animation-name: snow-drops;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.snowflake2 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: 17px;
+  left: 16px;
+  animation-name: snow-drops;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.snowflake3 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: 0px;
+  left: 32px;
+  animation-name: snow-drops;
+  animation-duration: 2s;
+  animation-delay: 3s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.snowflake4 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: 17px;
+  left: 48px;
+  animation-name: snow-drops;
+  animation-duration: 2s;
+  animation-delay: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.snowflake5 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: 0px;
+  left: 65px;
+  animation-name: snow-drops;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.cloud-thunder {
+  position: absolute;
+  margin: auto;
+  display: block;
+  top: -30px;
+}
+
+.thunder{
+  animation-name: thunder;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-timing-function: ease-in;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.thunder1 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #ffff99;
+  top: 80px;
+  left: 65px;
+  width: 10px;
+  height: 33px;
+  z-index: 1;
+  transform: rotate(40deg);
+}
+.thunder2 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #ffff99;
+  top: 95px;
+  left: 66px;
+  width: 8px;
+  height: 30px;
+  z-index: 1;
+  transform: rotate(90deg);
+}
+.thunder3 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: #ffff99;
+  top: 110px;
+  left: 64px;
+  width: 20px;
+  height: 33px;
+  z-index: 1;
+  box-shadow: inset 0 15px 12px 0px #ffd480;
+  transform: rotate(210deg);
+  -webkit-clip-path: polygon(50% 0%, 30% 100%, 71% 100%);
+  clip-path: polygon(50% 0%, 30% 100%, 71% 100%);
+}
+
+.ddrop {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: lightblue;
+  width: 2px;
+  height: 35px;
+  top: 93px;
+  left: 40px;
+  transform: rotate(25deg);
+  z-index: 1;
+}
+.ddrop1{
+  animation-name: snow-drops;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.ddrop2 {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+  z-index: 1;
+  animation-name: snow-drops;
+  animation-duration: 3s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.ddrop3 {
+  position: absolute;
+  top: 5px;
+  left: 40px;
+  z-index: 1;
+  animation-name: snow-drops;
+  animation-duration: 1s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.ddrop4 {
+  position: absolute;
+  top: 3px;
+  left: 60px;
+  z-index: 1;
+  animation-name: snow-drops;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.horizontal1 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: white;
+  width: 80px;
+  height: 2px;
+  top: 105px;
+  left: 35px;
+  z-index: 2;
+}
+.horizontal2 {
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: white;
+  width: 80px;
+  height: 2px;
+  top: 118px;
+  left: 35px;
+  z-index: 2;
+}
+
+.wavy1{
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: lightblue;
+  width: 95px;
+  height: 57px;
+  top: 83px;
+  left: 30px;
+  z-index: 1;
+  animation-name: snow-drops;
+  animation-duration: 2s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+-webkit-clip-path: polygon(0 40%, 18% 30%, 33% 40%, 50% 30%, 67% 40%, 82% 30%, 100% 40%, 100% 50%, 82% 40%, 67% 50%, 50% 40%, 33% 50%, 18% 40%, 0 50%);
+clip-path: polygon(0 40%, 18% 30%, 33% 40%, 50% 30%, 67% 40%, 82% 30%, 100% 40%, 100% 50%, 82% 40%, 67% 50%, 50% 40%, 33% 50%, 18% 40%, 0 50%);
+}
+.wavy2{
+  position: absolute;
+  margin: auto;
+  display: block;
+  background-color: lightblue;
+  width: 75px;
+  height: 57px;
+  top: 98px;
+  left: 40px;
+  z-index: 1;
+  animation-name: snow-drops;
+  animation-duration: 2s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+-webkit-clip-path: polygon(0 40%, 18% 30%, 33% 40%, 50% 30%, 67% 40%, 82% 30%, 100% 40%, 100% 50%, 82% 40%, 67% 50%, 50% 40%, 33% 50%, 18% 40%, 0 50%);
+clip-path: polygon(0 40%, 18% 30%, 33% 40%, 50% 30%, 67% 40%, 82% 30%, 100% 40%, 100% 50%, 82% 40%, 67% 50%, 50% 40%, 33% 50%, 18% 40%, 0 50%);
+}
+
+.night{
+  background-color:#00004d;
+}
+.yellow-moon{
+  position: absolute;
+  display: block;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  background-color: #ffffb3;
+  border-radius: 50%;
+  top: 25px;
+  left: 27px;
+}
+.back-moon{
+  position: absolute;
+  display: block;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  background-color: #00004d;
+  border-radius: 50%;
+  top: 21px;
+  left: 16px;
+  z-index:2;
+}
+.star{
+  position: absolute;
+  display: block;
+  margin: auto;
+  background-color: #ffffb3;
+  width: 12px;
+  height: 12px;
+  top: 31px;
+  left: 32px;
+  z-index: 4;
+  -webkit-clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+}
+
+.star1{
+  position: absolute;
+  z-index: 3;
+  animation-name: snow-drops;
+  animation-duration: 1s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+.star2{
+  animation-name: snow-drops;
+  animation-duration: 4s;
+  animation-delay: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: absolute;
+  left: 40px;
+  top: 35px;
+  z-index:3;
+}
+.star3{
+  animation-name: snow-drops;
+  animation-duration: 3s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  position: absolute;
+  left: 0px;
+  top: 60px;
+  z-index:3;
+}
+
+.full-moon{
+  position: absolute;
+  display: block;
+  margin: auto;
+  width: 90px;
+  height: 90px;
+  background-color: #ffffb3;
+  border-radius: 50%;
+  top: 25px;
+  left: 38px;
+  z-index: 1;
+  box-shadow: inset -8px -10px 10px yellow;
+}
+@keyframes rotation1 {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+}
+
+@keyframes rotation2 {
+    from {transform: rotate(35deg);}
+    to {transform: rotate(395deg);}
+}
+
+@keyframes cloudtransform {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  50% {
+    opacity: 1;
+    transform: translate(-27px, 0);
+  }
+  
+  100% {
+    opacity: 0;
+    transform: translate(-55px, 0);
+  }
+}
+
+@keyframes snow-drops{
+  from {opacity: 0.3;}
+    to {opacity: 1;}
+}
+
+@keyframes thunder{
+    from {
+      transform: translate(15px, -20px);
+      opacity: 0.05;}
+    to {
+      transform: translate(0, 0);
+        opacity: 1;}
+}
+
+@keyframes darker {
+    from {background-color: #cccccc}
+    to {background-color: #a6a6a6;}
+}

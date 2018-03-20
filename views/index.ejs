@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Hackathon</title>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel='stylesheet prefetch' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+
+  <body>
+		<div class="container">
+			<div class="header">
+				<div class="title">ESTIMATE&nbsp;&nbsp;&nbsp;PRECIPITATION</div>
+			</div>
+
+			<div class="svg-check">
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+		 width="142.5px" height="142.5px" viewBox="0 0 142.5 142.5" enable-background="new 0 0 142.5 142.5" xml:space="preserve">
+	<circle fill="none" class="circle" stroke="#fff" stroke-width="5" stroke-miterlimit="10" cx="71.25" cy="71.25" r="68.75"/>
+	<polyline fill="none" class="check" stroke="#fff" stroke-width="5" stroke-miterlimit="10" points="37.727,76.435 56.619,95.327 
+		104.773,47.173 " style="float: left;"/>
+				</svg>
+				<h1 id="answer_in_big" style="color: orange;font-size: 4.5rem;float: right;margin-left:60px;font-family:Calibri;margin-top: 30px;">0</h1>
+			</div>
+			<br><br>
+		<div id="clouds" style="display: none;margin-top: 160px;">
+			<div class="row text-center" style="text-align: center;">
+    
+      <div class="box cloudy" style="display: none;">
+        <div class="circle-box">
+          <div class="littlCloud">
+            <div class="littlcloud1"></div>
+            <div class="littlcloud2"></div>
+            <div class="littlcloud3"></div>
+          </div>
+          <div class="cloud">
+            <div class="cloud1"></div>
+            <div class="cloud2"></div>
+            <div class="cloud3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box sunny" style="display: none;">
+        <div class="circle-box">
+          <div class="sun">
+            <div class="suncircle"></div>
+            <div class="sunshine1"></div>
+            <div class="sunshine2"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box partlycloudy" style="display: none;">
+        <div class="circle-box">
+          <div class="sun-second">
+            <div class="sun">
+              <div class="suncircle"></div>
+              <div class="sunshine1"></div>
+              <div class="sunshine2"></div>
+            </div>
+          </div>
+          <div class="cloud">
+            <div class="cloud1"></div>
+            <div class="cloud2"></div>
+            <div class="cloud3"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="box rainy" style="display: none;">
+        <div class="circle-box">
+          <div class="cloud-rain">
+            <div class="clouddark1"></div>
+            <div class="clouddark2"></div>
+            <div class="clouddark3"></div>
+          </div>
+          <div class="drops">
+            <div class="drop1">
+              <div class="maindrop"></div>
+              <div class="droptail"></div>
+            </div>
+            <div class="drop2">
+              <div class="maindrop"></div>
+              <div class="droptail"></div>
+            </div>
+            <div class="drop3">
+              <div class="maindrop"></div>
+              <div class="droptail"></div>
+            </div>
+          </div>
+          <div class="drop4">
+            <div class="maindrop"></div>
+            <div class="droptail"></div>
+          </div>
+        </div>
+        <div class="drop5">
+          <div class="maindrop"></div>
+          <div class="droptail"></div>
+        </div>
+      </div>
+   
+      <div class="box drizzle" style="display: none;">
+        <div class="circle-box">
+          <div class="cloud-rain">
+            <div class="clouddark1"></div>
+            <div class="clouddark2"></div>
+            <div class="clouddark3"></div>
+          </div>
+          <div class="drizzle-drops">
+            <div class="ddrop1">
+              <div class="ddrop"></div>
+            </div>
+            <div class="ddrop2">
+              <div class="ddrop"></div>
+            </div>
+            <div class="ddrop3">
+              <div class="ddrop"></div>
+            </div>
+            <div class="ddrop4">
+              <div class="ddrop"></div>
+            </div>
+          </div>
+          <div class="horizontal">
+            <div class="horizontal1"></div>
+            <div class="horizontal2"></div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+
+			<div id="result" style="display: none;">
+				<div class="result">The estimated precipitation is <span id="res"></span> mm.<br>
+					<a href="/" style="color: orange;text-decoration: none">Predict</a>&nbsp;&nbsp;for a new set of parameters.</div>
+			</div>
+			<div class="form-elements" style="float: left;">
+				<div class="">
+					<input type="text" name="avgtemp" id="avgtemp"  placeholder="AVERAGE TEMPERATURE (CELSIUS)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'AVERAGE TEMPERATURE (CELSIUS)'" required>
+					<div class="valid"></div>
+					<div class="invalid"></div>
+				</div>
+				<div class="">
+					<input type="text" name="dr" id="dr" placeholder="DIURNAL TEMPERATURE RANGE (CELSIUS)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'DIURNAL TEMPERATURE RANGE (CELSIUS)'" required>
+					<div class="valid"></div>
+					<div class="invalid"></div>
+				</div>
+				<div class="">
+					<input type="text" name="maxtemp" id="maxtemp" placeholder="MAXIMUM TEMPERATURE (CELSIUS)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'MAXIMUM TEMPERATURE (CELSIUS)'" required>
+					<div class="valid"></div>
+					<div class="invalid"></div>
+				</div>
+				<div class="">
+					<input type="text" name="kevap" id="kevap" placeholder="POTENTIAL EVAPOTRANSPIRATION (mm/Day)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'POTENTIAL EVAPOTRANSPIRATION (mm/Day)'" required>
+					<div class="valid"></div>
+					<div class="invalid"></div>
+				</div>
+				<div class="">
+					<input type="text" name="rce" id="rce" placeholder="REFERENCE CROP EVAPOTRANSPIRATION (mm/Day)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'REFERENCE CROP EVAPOTRANSPIRATION (mm/Day)'" required>
+					<div class="valid"></div>
+					<div class="invalid"></div>
+				</div>
+				<div>
+					<select id="month" name="month">
+						<option value="undefined">Select Month</option>
+						<option value="Jan">January</option>
+						<option value="Feb">February</option>
+						<option value="Mar">March</option>
+						<option value="Apr">April</option>
+						<option value="May">May</option>
+						<option value="Jun">June</option>
+						<option value="Jul">July</option>
+						<option value="Aug">August</option>
+						<option value="Sep">September</option>
+						<option value="Oct">October</option>
+						<option value="Nov">November</option>
+						<option value="Dec">December</option>
+					</select>
+					<div class="valid"></div>
+					<div class="invalid"></div>
+				</div>
+			</div>
+			<div class="form-elements" style="float: right;">
+				<div class="">
+					<input type="text" name="cloud" id="cloud"  placeholder="CLOUD COVER (%)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'CLOUD COVER (%)'" required>
+					<div class="valid"></div>
+					<div class="invalid"></div>
+				</div>
+				<div class="">
+					<input type="text" name="grf" id="grf" placeholder="GROUND FROST FREQUENCY (DAYS)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'GROUND FROST FREQUENCY (DAYS)'" required>
+					<div class="valid"></div>
+					<div class="invalid"></div>
+				</div>
+				<div class="">
+					<input type="text" name="mintemp" id="mintemp" placeholder="MINIMUM TEMPERATURE (CELSIUS)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'MINIMUM TEMPERATURE (CELSIUS)'" required>
+					<div class="valid"></div>
+					<div class="invalid"></div>
+				</div>
+				<div class="">
+					<input type="text" name="wdf" id="wdf" placeholder="WET DAY FREQUENCY (DAYS)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'WET DAY FREQUENCY (DAYS)'" required>
+					<div class="valid"></div>
+					<div class="invalid"></div>
+				</div>
+				<div class="">
+					<input type="text" name="vp" id="vp" placeholder="VAPOUR PRESSURE (hpa)" onfocus="this.placeholder = ''" onblur="this.placeholder = 'VAPOUR PRESSURE (hpa)'" required>
+					<div class="valid"></div>
+					<div class="invalid"></div>
+				</div>
+        <div>
+          <select id="place" name="place">
+            <option value="undefined">Select District</option>
+            <option value="ajmer">Ajmer</option>
+            <option value="alwar">Alwar</option>
+            <option value="banswara">Banswara</option>
+            <option value="baran">Baran</option>
+            <option value="barmer">Barmer</option>
+            <option value="bharatpur">Bharatpur</option>
+            <option value="bhilwara">Bhilwara</option>
+            <option value="bikaner">Bikaner</option>
+            <option value="bundi">Bundi</option>
+            <option value="chittaurgarh">Chittaurgarh</option>
+            <option value="churu">Churu</option>
+            <option value="dausa">Dausa</option>
+            <option value="dhaulpur">Dhaulpur</option>
+            <option value="dungarpur">Dungarpur</option>
+            <option value="ganganagar">Ganganagar</option>
+            <option value="hanumangarh">Hanumangarh</option>
+            <option value="jaipur">Jaipur</option>
+            <option value="jaisalmer">Jaisalmer</option>
+            <option value="jalor">Jalor</option>
+            <option value="jhalawar">Jhalawar</option>
+            <option value="jhunjunun">Jhunjunun</option>
+            <option value="jodhpur">Jodhpur</option>
+            <option value="karauli">Karauli</option>
+            <option value="kota">Kota</option>
+            <option value="nagaur">Nagaur</option>
+            <option value="pali">Pali</option>
+            <option value="rajsamand">Rajsamand</option>
+            <option value="sawaimadhopur">Sawai Madhopur</option>
+            <option value="sikar">Sikar</option>
+            <option value="sirohi">Sirohi</option>
+            <option value="tonk">Tonk</option>
+            <option value="udaipur">Udaipur</option>
+          </select>
+          <div class="valid"></div>
+          <div class="invalid"></div>
+        </div>
+      </div>
+				<button type="submit" id="submitForm">PREDICT</button>
+		</div>
+		<script src="jquery-2.1.1.js"></script>
+		<script src="form-field-demo-cp.js"></script>
+	</body>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script  src="js/index.js"></script>
+</body>
+</html>
